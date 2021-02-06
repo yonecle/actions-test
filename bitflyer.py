@@ -48,7 +48,7 @@ def my_market_condition(dict):
     return False
 
 
-markets = [d for d in get_markets() if market_condition(d)]
+markets = [d for d in get_markets() if my_market_condition(d)]
 
 for market in markets:
     d = get_board(market["product_code"])
