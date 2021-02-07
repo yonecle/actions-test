@@ -54,11 +54,16 @@ def my_market_condition(data):
         pass
     return rcode
 
+def main():
+    """ main() """
+    markets = [d for d in get_markets() if my_market_condition(d)]
 
-markets = [d for d in get_markets() if my_market_condition(d)]
+    for market in markets:
+        data = get_board(market["product_code"])
+        print(data["mid_price"])
+        data2 = get_ticker(market["product_code"])
+        pprint.pprint(data2)
 
-for market in markets:
-    d = get_board(market["product_code"])
-    print(d["mid_price"])
-    d = get_ticker(market["product_code"])
-    pprint.pprint(d)
+
+if __name__ == '__main__':
+    main()
