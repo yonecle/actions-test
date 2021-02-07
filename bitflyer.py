@@ -54,7 +54,7 @@ def my_market_condition(data):
         pass
     return rcode
 
-def main3():
+def main4():
     """ main() """
     markets = [d for d in get_markets() if my_market_condition(d)]
 
@@ -66,4 +66,4 @@ def main3():
 
 
 if __name__ == '__main__':
-    main3()
+    main4()
